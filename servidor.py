@@ -41,7 +41,7 @@ class Servidor():
 					c.send(msg)
 			except:
 				self.clientes.remove(c)
-		print("Clientes conectado: ", len(clientes))
+		
 		
 	def aceptarC(self):
 		while True:
@@ -62,6 +62,7 @@ class Servidor():
 						data = c.recv(32)
 						if data:
 							self.broadcast(data,c)
+							print("Clientes conectado: ", len(self.clientes))
 					except:
 						pass
 
