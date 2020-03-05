@@ -6,7 +6,7 @@ import os
 
 class Cliente():
 
-	def __init__(self, host=socket.gethostname(), port=59989):
+	def __init__(self, host=socket.gethostname(), port=int(input("A que puerto se quiere conectar: "))):
 		self.sock = socket.socket()
 		self.sock.connect((str(host), int(port)))
 		hilo_recv_mensaje = threading.Thread(target=self.recibir)
